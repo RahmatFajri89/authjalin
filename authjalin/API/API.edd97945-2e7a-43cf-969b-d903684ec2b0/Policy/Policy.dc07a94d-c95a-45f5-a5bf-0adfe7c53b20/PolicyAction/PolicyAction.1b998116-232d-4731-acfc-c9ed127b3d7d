@@ -1,0 +1,34 @@
+{
+  "id" : "1b998116-232d-4731-acfc-c9ed127b3d7d",
+  "names" : [ {
+    "value" : "Identify & Authorize",
+    "locale" : "en"
+  } ],
+  "templateKey" : "evaluatePolicy",
+  "parameters" : [ {
+    "templateKey" : "logicalConnector",
+    "values" : [ "OR" ]
+  }, {
+    "templateKey" : "allowAnonymous",
+    "values" : [ "false" ]
+  }, {
+    "templateKey" : "IdentificationRule",
+    "parameters" : [ {
+      "templateKey" : "applicationLookup",
+      "values" : [ "strict" ]
+    }, {
+      "templateKey" : "identificationType",
+      "values" : [ "httpHeaders" ]
+    } ]
+  }, {
+    "templateKey" : "IdentificationRule",
+    "parameters" : [ {
+      "templateKey" : "applicationLookup",
+      "values" : [ "strict" ]
+    }, {
+      "templateKey" : "identificationType",
+      "values" : [ "apiKey" ]
+    } ]
+  } ],
+  "active" : false
+}

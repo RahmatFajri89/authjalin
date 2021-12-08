@@ -1,0 +1,79 @@
+{
+  "id" : "166e0570-fef4-4c42-a36a-cd1840f4ecdf",
+  "names" : [ {
+    "value" : "Conditional Error Processing",
+    "locale" : "en"
+  } ],
+  "templateKey" : "conditionalErrorProcessing",
+  "parameters" : [ {
+    "templateKey" : "transformationConditions",
+    "parameters" : [ {
+      "templateKey" : "logicalConnector",
+      "values" : [ "AND" ]
+    }, {
+      "templateKey" : "transformationCondition",
+      "parameters" : [ {
+        "templateKey" : "transformationVariable",
+        "values" : [ "${response.statusCode}" ]
+      }, {
+        "templateKey" : "transformationConditionOperator",
+        "values" : [ "equals" ]
+      }, {
+        "templateKey" : "transformationConditionValue",
+        "values" : [ "500" ]
+      } ]
+    }, {
+      "templateKey" : "transformationCondition",
+      "parameters" : [ {
+        "templateKey" : "transformationVariable",
+        "values" : [ "${ERROR_MESSAGE}" ]
+      }, {
+        "templateKey" : "transformationConditionOperator",
+        "values" : [ "contains" ]
+      }, {
+        "templateKey" : "transformationConditionValue",
+        "values" : [ "BRIAPIException" ]
+      } ]
+    } ]
+  }, {
+    "templateKey" : "errorTransformationConfiguration",
+    "parameters" : [ {
+      "templateKey" : "customFailureMessages",
+      "parameters" : [ {
+        "templateKey" : "sendNativeProviderFault",
+        "values" : [ "false" ]
+      }, {
+        "templateKey" : "failureMessage",
+        "parameters" : [ {
+          "templateKey" : "contentType",
+          "values" : [ "text" ]
+        }, {
+          "templateKey" : "errortemplate",
+          "values" : [ "${ERROR_MESSAGE}" ]
+        }, {
+          "templateKey" : "useAsDefault",
+          "values" : [ "true" ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "templateKey" : "postProcessingSteps",
+    "parameters" : [ {
+      "templateKey" : "invokeESBParam",
+      "parameters" : [ {
+        "templateKey" : "invokeISService",
+        "parameters" : [ {
+          "templateKey" : "serviceName",
+          "values" : [ "BriJalinAPIUtils:exceptionHandling" ]
+        }, {
+          "templateKey" : "runAsUser",
+          "values" : [ "Administrator" ]
+        }, {
+          "templateKey" : "complyToISSpec",
+          "values" : [ "true" ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "active" : false
+}

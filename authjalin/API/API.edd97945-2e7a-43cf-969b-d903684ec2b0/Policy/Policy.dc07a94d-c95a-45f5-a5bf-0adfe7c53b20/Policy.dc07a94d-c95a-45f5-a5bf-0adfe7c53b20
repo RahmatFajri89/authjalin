@@ -1,0 +1,61 @@
+{
+  "id" : "dc07a94d-c95a-45f5-a5bf-0adfe7c53b20",
+  "names" : [ {
+    "value" : "Default Policy for API authjalin",
+    "locale" : "English"
+  } ],
+  "descriptions" : [ {
+    "value" : "",
+    "locale" : "English"
+  } ],
+  "scope" : {
+    "scopeConditions" : [ ]
+  },
+  "policyEnforcements" : [ {
+    "enforcements" : [ {
+      "enforcementObjectId" : "6254d402-11f6-45f0-ab83-eb1970f51ba2",
+      "order" : "0"
+    } ],
+    "stageKey" : "requestPayloadProcessing"
+  }, {
+    "enforcements" : [ {
+      "enforcementObjectId" : "8e7aef7f-86cb-4d0d-ba04-d858035ed8a6",
+      "order" : "0"
+    }, {
+      "enforcementObjectId" : "f26664ac-fa63-4ef3-9d8e-23b46b059cb8",
+      "order" : "1"
+    } ],
+    "stageKey" : "routing"
+  }, {
+    "enforcements" : [ {
+      "enforcementObjectId" : "094dedc4-a710-4a21-b963-a9e4f044429d",
+      "order" : "0"
+    } ],
+    "stageKey" : "LMT"
+  }, {
+    "enforcements" : [ {
+      "enforcementObjectId" : "1b998116-232d-4731-acfc-c9ed127b3d7d",
+      "order" : "0"
+    } ],
+    "stageKey" : "IAM"
+  }, {
+    "enforcements" : [ {
+      "enforcementObjectId" : "166e0570-fef4-4c42-a36a-cd1840f4ecdf",
+      "order" : "0"
+    }, {
+      "enforcementObjectId" : "4f8a249e-ab74-4ec8-9d7e-4bb5e8a238b3",
+      "order" : "1"
+    } ],
+    "stageKey" : "responseFaultProcessing"
+  }, {
+    "enforcements" : [ {
+      "enforcementObjectId" : "3c415bb4-5ae1-48b2-9180-a4552ff6651b",
+      "order" : "0"
+    } ],
+    "stageKey" : "transport"
+  } ],
+  "policyScope" : "SERVICE",
+  "systemPolicy" : false,
+  "global" : false,
+  "active" : false
+}

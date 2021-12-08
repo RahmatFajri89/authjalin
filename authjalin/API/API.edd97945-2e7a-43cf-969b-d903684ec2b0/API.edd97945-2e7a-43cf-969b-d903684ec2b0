@@ -1,0 +1,199 @@
+{
+  "apiDefinition" : {
+    "info" : {
+      "description" : "This API and message format can be used by any channel to retrieve OAuth Token. It enables secure authorization using standard methods\nthat can easily be integrated in your app. It should be included in Authorization header of every transaction sent to API Management.\nThe authentication is valid for 15 minutes (configurable), the rest you are asked to retrieve the new authentication code.",
+      "version" : "1.0",
+      "title" : "authjalin"
+    },
+    "serviceRegistryDisplayName" : "authjalin_1.0",
+    "tags" : [ {
+      "name" : "token"
+    } ],
+    "schemes" : [ ],
+    "security" : [ ],
+    "paths" : {
+      "/token" : {
+        "post" : {
+          "tags" : [ "token" ],
+          "description" : "Retrieve OAuth token",
+          "operationId" : "retrieveToken",
+          "consumes" : [ "application/x-www-form-urlencoded" ],
+          "produces" : [ "application/json" ],
+          "responses" : {
+            "200" : {
+              "description" : "",
+              "content" : {
+                "application/json" : {
+                  "schema" : {
+                    "$ref" : "#/components/schemas/TokenResponse"
+                  },
+                  "examples" : { },
+                  "example" : "{\n  \"accessToken\": \"eyJraWQiOiJzc29zIiwiYWxnIjoiUlM1MTIifQ.eyJzdWIiOiJiOTU3YWE0NC04ZWZmLTQ0NjYtOWEyMy0xNDg5MzgyOWExZjAiLCJhdWQiOiJqd3QtYXVkIiwiY2xpZW50SWQiOiI5YjZkYjRmMy1iMzYyLTQ5YzEtOTZhZC1jNjMyNTQxNjI5ZTIiLCJpc3MiOiJqd3QtaXNzdWVyIiwicGFydG5lcklkIjoiVUFUQ09SUEFZIiwiZXhwIjoxNTk1MTY3MTQ5LCJpYXQiOjE1ODkxNjcxNDl9.ZzacwbT08Ax7fMQDRwtaFxDz2dpn3cwz58tMI3QonysPXpr0bHRT6W8ZtI_Q0oTjm17A7NsHqwyadbpGPIq38Lw9h5G7kNGmpVzWKAYZZPQlTwuC7zxHdXYwBQXIs7qYD_wIiPQvYIqPwt6p390oBpUiZk7IsVQ_8ucmXbuBaa9-7uWuvdRL72AQr2c-Fn89Jjaz6fsQy92dapLAQo9iU7k3wgRk3bxQPQjIbbC-osg-OBzQ1Tyx-NuPaqg5Z0y4ccrVfR2Nv9-jt4wEYFdy4EFgLdj7XKmx8MexfGdtrt9Vn4mi5scCiNOGzEoSKqb27SwdAtdL-caOH7czCPwg\",\n  \"tokenType\": \"Bearer\",\n  \"expiresIn\": 900000\n}"
+                }
+              },
+              "links" : { },
+              "schema" : { },
+              "examples" : { },
+              "headers" : { }
+            },
+            "400" : {
+              "description" : "",
+              "content" : {
+                "application/json" : {
+                  "schema" : {
+                    "$ref" : "#/components/schemas/TokenResponse"
+                  },
+                  "examples" : { },
+                  "example" : "{\n  \"accessToken\": \"eyJraWQiOiJzc29zIiwiYWxnIjoiUlM1MTIifQ.eyJzdWIiOiJiOTU3YWE0NC04ZWZmLTQ0NjYtOWEyMy0xNDg5MzgyOWExZjAiLCJhdWQiOiJqd3QtYXVkIiwiY2xpZW50SWQiOiI5YjZkYjRmMy1iMzYyLTQ5YzEtOTZhZC1jNjMyNTQxNjI5ZTIiLCJpc3MiOiJqd3QtaXNzdWVyIiwicGFydG5lcklkIjoiVUFUQ09SUEFZIiwiZXhwIjoxNTk1MTY3MTQ5LCJpYXQiOjE1ODkxNjcxNDl9.ZzacwbT08Ax7fMQDRwtaFxDz2dpn3cwz58tMI3QonysPXpr0bHRT6W8ZtI_Q0oTjm17A7NsHqwyadbpGPIq38Lw9h5G7kNGmpVzWKAYZZPQlTwuC7zxHdXYwBQXIs7qYD_wIiPQvYIqPwt6p390oBpUiZk7IsVQ_8ucmXbuBaa9-7uWuvdRL72AQr2c-Fn89Jjaz6fsQy92dapLAQo9iU7k3wgRk3bxQPQjIbbC-osg-OBzQ1Tyx-NuPaqg5Z0y4ccrVfR2Nv9-jt4wEYFdy4EFgLdj7XKmx8MexfGdtrt9Vn4mi5scCiNOGzEoSKqb27SwdAtdL-caOH7czCPwg\",\n  \"tokenType\": \"Bearer\",\n  \"expiresIn\": 900000\n}"
+                }
+              },
+              "links" : { },
+              "schema" : { },
+              "examples" : { },
+              "headers" : { }
+            },
+            "401" : {
+              "description" : "",
+              "content" : {
+                "application/json" : {
+                  "schema" : {
+                    "$ref" : "#/components/schemas/TokenResponse"
+                  },
+                  "examples" : { },
+                  "example" : "{\n  \"accessToken\": \"eyJraWQiOiJzc29zIiwiYWxnIjoiUlM1MTIifQ.eyJzdWIiOiJiOTU3YWE0NC04ZWZmLTQ0NjYtOWEyMy0xNDg5MzgyOWExZjAiLCJhdWQiOiJqd3QtYXVkIiwiY2xpZW50SWQiOiI5YjZkYjRmMy1iMzYyLTQ5YzEtOTZhZC1jNjMyNTQxNjI5ZTIiLCJpc3MiOiJqd3QtaXNzdWVyIiwicGFydG5lcklkIjoiVUFUQ09SUEFZIiwiZXhwIjoxNTk1MTY3MTQ5LCJpYXQiOjE1ODkxNjcxNDl9.ZzacwbT08Ax7fMQDRwtaFxDz2dpn3cwz58tMI3QonysPXpr0bHRT6W8ZtI_Q0oTjm17A7NsHqwyadbpGPIq38Lw9h5G7kNGmpVzWKAYZZPQlTwuC7zxHdXYwBQXIs7qYD_wIiPQvYIqPwt6p390oBpUiZk7IsVQ_8ucmXbuBaa9-7uWuvdRL72AQr2c-Fn89Jjaz6fsQy92dapLAQo9iU7k3wgRk3bxQPQjIbbC-osg-OBzQ1Tyx-NuPaqg5Z0y4ccrVfR2Nv9-jt4wEYFdy4EFgLdj7XKmx8MexfGdtrt9Vn4mi5scCiNOGzEoSKqb27SwdAtdL-caOH7czCPwg\",\n  \"tokenType\": \"Bearer\",\n  \"expiresIn\": 900000\n}"
+                }
+              },
+              "links" : { },
+              "schema" : { },
+              "examples" : { },
+              "headers" : { }
+            }
+          },
+          "mockedResponses" : { },
+          "mockedConditionsBasedCustomResponsesList" : [ ],
+          "enabled" : true,
+          "scopes" : [ ],
+          "requestBody" : {
+            "content" : {
+              "application/x-www-form-urlencoded" : {
+                "schema" : {
+                  "type" : "gateway",
+                  "schema" : "{\"type\":\"object\",\"properties\":{\"grant_type\":{\"type\":\"string\",\"description\":\"Value client_credentials\",\"readOnly\":false}}}"
+                },
+                "examples" : { }
+              }
+            },
+            "name" : "retrieveToken"
+          }
+        },
+        "parameters" : [ {
+          "in" : "header",
+          "name" : "X-TimeStamp",
+          "description" : "Transaction timestamp Format : 'yyyy-MM-dd'T'HH:mm:ss.SSS'T'Z'",
+          "required" : true,
+          "schema" : {
+            "description" : "Transaction timestamp Format : 'yyyy-MM-dd'T'HH:mm:ss.SSS'T'Z'",
+            "readOnly" : false,
+            "type" : "string"
+          },
+          "parameterSchema" : {
+            "description" : "Transaction timestamp Format : 'yyyy-MM-dd'T'HH:mm:ss.SSS'T'Z'",
+            "readOnly" : false,
+            "type" : "string"
+          },
+          "type" : "string"
+        }, {
+          "in" : "header",
+          "name" : "X-Signature",
+          "description" : "Transaction signature. Please refer to documentation on how to generate signature.",
+          "required" : true,
+          "schema" : {
+            "description" : "Transaction signature. Please refer to documentation on how to generate signature.",
+            "readOnly" : false,
+            "type" : "string"
+          },
+          "parameterSchema" : {
+            "description" : "Transaction signature. Please refer to documentation on how to generate signature.",
+            "readOnly" : false,
+            "type" : "string"
+          },
+          "type" : "string"
+        }, {
+          "in" : "header",
+          "name" : "X-Himbara-Key",
+          "description" : "Key Shared by Bank Himbara",
+          "required" : true,
+          "schema" : {
+            "description" : "Key Shared by Bank Himbara",
+            "readOnly" : false,
+            "type" : "string"
+          },
+          "parameterSchema" : {
+            "description" : "Key Shared by Bank Himbara",
+            "readOnly" : false,
+            "type" : "string"
+          },
+          "type" : "string"
+        } ],
+        "scopes" : [ ],
+        "displayName" : "/token",
+        "enabled" : true
+      }
+    },
+    "securityDefinitions" : { },
+    "definitions" : { },
+    "parameters" : { },
+    "baseUriParameters" : [ ],
+    "externalDocs" : [ ],
+    "servers" : [ {
+      "url" : "${internal-is-url}",
+      "variables" : { }
+    } ],
+    "components" : {
+      "schemas" : {
+        "TokenResponse" : {
+          "type" : "gateway",
+          "schema" : "{\"required\":[\"expiresIn\",\"accessToken\",\"tokenType\"],\"type\":\"object\",\"properties\":{\"accessToken\":{\"type\":\"string\",\"description\":\"accessToken\"},\"expiresIn\":{\"type\":\"string\",\"description\":\"Expired access token (milisecond)\"},\"tokenType\":{\"type\":\"string\",\"description\":\"tokenType\"}}}"
+        }
+      },
+      "responses" : { },
+      "parameters" : { },
+      "examples" : { },
+      "requestBodies" : { },
+      "headers" : { },
+      "links" : { },
+      "callbacks" : { }
+    },
+    "type" : "rest"
+  },
+  "nativeEndpoint" : [ {
+    "passSecurityHeaders" : true,
+    "uri" : "${internal-is-url}",
+    "connectionTimeoutDuration" : 0,
+    "alias" : false
+  } ],
+  "apiName" : "authjalin",
+  "apiVersion" : "1.0",
+  "apiDescription" : "This API and message format can be used by any channel to retrieve OAuth Token. It enables secure authorization using standard methods\nthat can easily be integrated in your app. It should be included in Authorization header of every transaction sent to API Management.\nThe authentication is valid for 15 minutes (configurable), the rest you are asked to retrieve the new authentication code.\n",
+  "maturityState" : "Beta",
+  "isActive" : true,
+  "type" : "REST",
+  "owner" : "Administrator",
+  "policies" : [ "dc07a94d-c95a-45f5-a5bf-0adfe7c53b20" ],
+  "referencedFiles" : {
+    "authjalin.json" : "{\n  \"swagger\" : \"2.0\",\n  \"info\" : {\n    \"description\" : \"This API and message format can be used by any channel to retrieve OAuth Token. It enables secure authorization using standard methods\\nthat can easily be integrated in your app. It should be included in Authorization header of every transaction sent to API Management.\\nThe authentication is valid for 15 minutes (configurable), the rest you are asked to retrieve the new authentication code.\",\n    \"version\" : \"1.0\",\n    \"title\" : \"authjalin\"\n  },\n  \"host\" : \"api.privateopen.dev.bri.co.id:5557\",\n  \"basePath\" : \"/jalin/openapi/auth\",\n  \"tags\" : [ {\n    \"name\" : \"token\"\n  } ],\n  \"schemes\" : [ \"http\" ],\n  \"paths\" : {\n    \"/token\" : {\n      \"post\" : {\n        \"tags\" : [ \"token\" ],\n        \"description\" : \"Retrieve OAuth token\",\n        \"operationId\" : \"retrieveToken\",\n        \"consumes\" : [ \"application/x-www-form-urlencoded\" ],\n        \"produces\" : [ \"application/json\" ],\n        \"parameters\" : [ {\n          \"name\" : \"grant_type\",\n          \"in\" : \"formData\",\n          \"description\" : \"Value client_credentials\",\n          \"required\" : false,\n          \"type\" : \"string\"\n        } ],\n        \"responses\" : {\n          \"200\" : {\n            \"description\" : \"\",\n            \"examples\" : {\n              \"application/json\" : \"{\\n  \\\"accessToken\\\": \\\"eyJraWQiOiJzc29zIiwiYWxnIjoiUlM1MTIifQ.eyJzdWIiOiJiOTU3YWE0NC04ZWZmLTQ0NjYtOWEyMy0xNDg5MzgyOWExZjAiLCJhdWQiOiJqd3QtYXVkIiwiY2xpZW50SWQiOiI5YjZkYjRmMy1iMzYyLTQ5YzEtOTZhZC1jNjMyNTQxNjI5ZTIiLCJpc3MiOiJqd3QtaXNzdWVyIiwicGFydG5lcklkIjoiVUFUQ09SUEFZIiwiZXhwIjoxNTk1MTY3MTQ5LCJpYXQiOjE1ODkxNjcxNDl9.ZzacwbT08Ax7fMQDRwtaFxDz2dpn3cwz58tMI3QonysPXpr0bHRT6W8ZtI_Q0oTjm17A7NsHqwyadbpGPIq38Lw9h5G7kNGmpVzWKAYZZPQlTwuC7zxHdXYwBQXIs7qYD_wIiPQvYIqPwt6p390oBpUiZk7IsVQ_8ucmXbuBaa9-7uWuvdRL72AQr2c-Fn89Jjaz6fsQy92dapLAQo9iU7k3wgRk3bxQPQjIbbC-osg-OBzQ1Tyx-NuPaqg5Z0y4ccrVfR2Nv9-jt4wEYFdy4EFgLdj7XKmx8MexfGdtrt9Vn4mi5scCiNOGzEoSKqb27SwdAtdL-caOH7czCPwg\\\",\\n  \\\"tokenType\\\": \\\"Bearer\\\",\\n  \\\"expiresIn\\\": 900000\\n}\"\n            },\n            \"schema\" : {\n              \"$ref\" : \"#/definitions/TokenResponse\"\n            }\n          },\n          \"400\" : {\n            \"description\" : \"\",\n            \"examples\" : {\n              \"application/json\" : \"{\\n  \\\"accessToken\\\": \\\"eyJraWQiOiJzc29zIiwiYWxnIjoiUlM1MTIifQ.eyJzdWIiOiJiOTU3YWE0NC04ZWZmLTQ0NjYtOWEyMy0xNDg5MzgyOWExZjAiLCJhdWQiOiJqd3QtYXVkIiwiY2xpZW50SWQiOiI5YjZkYjRmMy1iMzYyLTQ5YzEtOTZhZC1jNjMyNTQxNjI5ZTIiLCJpc3MiOiJqd3QtaXNzdWVyIiwicGFydG5lcklkIjoiVUFUQ09SUEFZIiwiZXhwIjoxNTk1MTY3MTQ5LCJpYXQiOjE1ODkxNjcxNDl9.ZzacwbT08Ax7fMQDRwtaFxDz2dpn3cwz58tMI3QonysPXpr0bHRT6W8ZtI_Q0oTjm17A7NsHqwyadbpGPIq38Lw9h5G7kNGmpVzWKAYZZPQlTwuC7zxHdXYwBQXIs7qYD_wIiPQvYIqPwt6p390oBpUiZk7IsVQ_8ucmXbuBaa9-7uWuvdRL72AQr2c-Fn89Jjaz6fsQy92dapLAQo9iU7k3wgRk3bxQPQjIbbC-osg-OBzQ1Tyx-NuPaqg5Z0y4ccrVfR2Nv9-jt4wEYFdy4EFgLdj7XKmx8MexfGdtrt9Vn4mi5scCiNOGzEoSKqb27SwdAtdL-caOH7czCPwg\\\",\\n  \\\"tokenType\\\": \\\"Bearer\\\",\\n  \\\"expiresIn\\\": 900000\\n}\"\n            },\n            \"schema\" : {\n              \"$ref\" : \"#/definitions/TokenResponse\"\n            }\n          },\n          \"401\" : {\n            \"description\" : \"\",\n            \"examples\" : {\n              \"application/json\" : \"{\\n  \\\"accessToken\\\": \\\"eyJraWQiOiJzc29zIiwiYWxnIjoiUlM1MTIifQ.eyJzdWIiOiJiOTU3YWE0NC04ZWZmLTQ0NjYtOWEyMy0xNDg5MzgyOWExZjAiLCJhdWQiOiJqd3QtYXVkIiwiY2xpZW50SWQiOiI5YjZkYjRmMy1iMzYyLTQ5YzEtOTZhZC1jNjMyNTQxNjI5ZTIiLCJpc3MiOiJqd3QtaXNzdWVyIiwicGFydG5lcklkIjoiVUFUQ09SUEFZIiwiZXhwIjoxNTk1MTY3MTQ5LCJpYXQiOjE1ODkxNjcxNDl9.ZzacwbT08Ax7fMQDRwtaFxDz2dpn3cwz58tMI3QonysPXpr0bHRT6W8ZtI_Q0oTjm17A7NsHqwyadbpGPIq38Lw9h5G7kNGmpVzWKAYZZPQlTwuC7zxHdXYwBQXIs7qYD_wIiPQvYIqPwt6p390oBpUiZk7IsVQ_8ucmXbuBaa9-7uWuvdRL72AQr2c-Fn89Jjaz6fsQy92dapLAQo9iU7k3wgRk3bxQPQjIbbC-osg-OBzQ1Tyx-NuPaqg5Z0y4ccrVfR2Nv9-jt4wEYFdy4EFgLdj7XKmx8MexfGdtrt9Vn4mi5scCiNOGzEoSKqb27SwdAtdL-caOH7czCPwg\\\",\\n  \\\"tokenType\\\": \\\"Bearer\\\",\\n  \\\"expiresIn\\\": 900000\\n}\"\n            },\n            \"schema\" : {\n              \"$ref\" : \"#/definitions/TokenResponse\"\n            }\n          }\n        }\n      },\n      \"parameters\" : [ {\n        \"name\" : \"X-TimeStamp\",\n        \"in\" : \"header\",\n        \"description\" : \"Transaction timestamp Format : 'yyyy-MM-dd'T'HH:mm:ss.SSS'T'Z'\",\n        \"required\" : true,\n        \"type\" : \"string\"\n      }, {\n        \"name\" : \"X-Signature\",\n        \"in\" : \"header\",\n        \"description\" : \"Transaction signature. Please refer to documentation on how to generate signature.\",\n        \"required\" : true,\n        \"type\" : \"string\"\n      }, {\n        \"name\" : \"X-Himbara-Key\",\n        \"in\" : \"header\",\n        \"description\" : \"Key Shared by Bank Himbara\",\n        \"required\" : true,\n        \"type\" : \"string\"\n      } ]\n    }\n  },\n  \"definitions\" : {\n    \"TokenResponse\" : {\n      \"type\" : \"object\",\n      \"required\" : [ \"accessToken\", \"expiresIn\", \"tokenType\" ],\n      \"properties\" : {\n        \"accessToken\" : {\n          \"type\" : \"string\",\n          \"description\" : \"accessToken\"\n        },\n        \"tokenType\" : {\n          \"type\" : \"string\",\n          \"description\" : \"tokenType\"\n        },\n        \"expiresIn\" : {\n          \"type\" : \"string\",\n          \"description\" : \"Expired access token (milisecond)\"\n        }\n      }\n    }\n  }\n}\n"
+  },
+  "tracingEnabled" : false,
+  "scopes" : [ ],
+  "publishedPortals" : [ ],
+  "creationDate" : "2021-10-07 03:40:43 GMT",
+  "lastModified" : "2021-12-06 15:36:05 GMT",
+  "systemVersion" : 1,
+  "gatewayEndpoints" : {
+    "openapi" : "jalin/openapi/auth"
+  },
+  "deployments" : [ "APIGateway" ],
+  "microgatewayEndpoints" : [ ],
+  "appMeshEndpoints" : [ ],
+  "id" : "edd97945-2e7a-43cf-969b-d903684ec2b0"
+}

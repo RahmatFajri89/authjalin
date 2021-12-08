@@ -1,0 +1,52 @@
+{
+  "id" : "8e7aef7f-86cb-4d0d-ba04-d858035ed8a6",
+  "names" : [ {
+    "value" : "Conditional Routing",
+    "locale" : "en"
+  } ],
+  "templateKey" : "contextBasedRouting",
+  "parameters" : [ {
+    "templateKey" : "routeTo",
+    "parameters" : [ {
+      "templateKey" : "endpointUri",
+      "values" : [ "${internal-is-url}/${sys:resource_path}" ]
+    }, {
+      "templateKey" : "method",
+      "values" : [ "CUSTOM" ]
+    } ]
+  }, {
+    "templateKey" : "contextRules",
+    "parameters" : [ {
+      "templateKey" : "name",
+      "values" : [ "retrieveToken" ]
+    }, {
+      "templateKey" : "transformationConditions",
+      "parameters" : [ {
+        "templateKey" : "logicalConnector",
+        "values" : [ "OR" ]
+      }, {
+        "templateKey" : "transformationCondition",
+        "parameters" : [ {
+          "templateKey" : "transformationVariable",
+          "values" : [ "${operationName}" ]
+        }, {
+          "templateKey" : "transformationConditionOperator",
+          "values" : [ "equals" ]
+        }, {
+          "templateKey" : "transformationConditionValue",
+          "values" : [ "/token" ]
+        } ]
+      } ]
+    }, {
+      "templateKey" : "routeTo",
+      "parameters" : [ {
+        "templateKey" : "endpointUri",
+        "values" : [ "${internal-is-url}/gateway/security/getJsonWebToken" ]
+      }, {
+        "templateKey" : "method",
+        "values" : [ "CUSTOM" ]
+      } ]
+    } ]
+  } ],
+  "active" : false
+}

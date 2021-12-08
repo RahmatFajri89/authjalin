@@ -1,0 +1,106 @@
+{
+  "id" : "6254d402-11f6-45f0-ab83-eb1970f51ba2",
+  "names" : [ {
+    "value" : "Request Transformation",
+    "locale" : "en"
+  } ],
+  "templateKey" : "requestTransformation",
+  "parameters" : [ {
+    "templateKey" : "transformationConditions",
+    "parameters" : [ {
+      "templateKey" : "logicalConnector",
+      "values" : [ "OR" ]
+    } ]
+  }, {
+    "templateKey" : "requestTransformationConfiguration",
+    "parameters" : [ {
+      "templateKey" : "commonTransformation",
+      "parameters" : [ {
+        "templateKey" : "remove",
+        "values" : [ "${request.headers.x-himbara-key}", "${request.headers.x-signature}", "${request.headers.x-timestamp}" ]
+      }, {
+        "templateKey" : "addOrModify",
+        "parameters" : [ {
+          "templateKey" : "transformationVariable",
+          "values" : [ "${request.headers.xHimbaraKey}" ]
+        }, {
+          "templateKey" : "transformationValue",
+          "values" : [ "${request.headers.x-himbara-key}" ]
+        } ]
+      }, {
+        "templateKey" : "addOrModify",
+        "parameters" : [ {
+          "templateKey" : "transformationVariable",
+          "values" : [ "${request.headers.clientMetadata}" ]
+        }, {
+          "templateKey" : "transformationValue",
+          "values" : [ "${request.application.claims.client}" ]
+        } ]
+      }, {
+        "templateKey" : "addOrModify",
+        "parameters" : [ {
+          "templateKey" : "transformationVariable",
+          "values" : [ "${request.headers.content-type}" ]
+        }, {
+          "templateKey" : "transformationValue",
+          "values" : [ "application/json" ]
+        } ]
+      }, {
+        "templateKey" : "addOrModify",
+        "parameters" : [ {
+          "templateKey" : "transformationVariable",
+          "values" : [ "${request.headers.xSignature}" ]
+        }, {
+          "templateKey" : "transformationValue",
+          "values" : [ "${request.headers.x-signature}" ]
+        } ]
+      }, {
+        "templateKey" : "addOrModify",
+        "parameters" : [ {
+          "templateKey" : "transformationVariable",
+          "values" : [ "${request.headers.xTimeStamp}" ]
+        }, {
+          "templateKey" : "transformationValue",
+          "values" : [ "${request.headers.x-timestamp}" ]
+        } ]
+      }, {
+        "templateKey" : "addOrModify",
+        "parameters" : [ {
+          "templateKey" : "transformationVariable",
+          "values" : [ "${request.headers.x-gateway-apikey}" ]
+        }, {
+          "templateKey" : "transformationValue",
+          "values" : [ "${request.headers.x-himbara-key}" ]
+        } ]
+      } ]
+    }, {
+      "templateKey" : "methodTransformation",
+      "parameters" : [ {
+        "templateKey" : "method",
+        "values" : [ "CUSTOM" ]
+      } ]
+    }, {
+      "templateKey" : "payloadTransformation",
+      "parameters" : [ {
+        "templateKey" : "payload",
+        "values" : [ "" ]
+      } ]
+    }, {
+      "templateKey" : "advancedTransformation",
+      "parameters" : [ {
+        "templateKey" : "invokeISService",
+        "parameters" : [ {
+          "templateKey" : "serviceName",
+          "values" : [ "BriJalinAPIUtils:validateOAuthSignature" ]
+        }, {
+          "templateKey" : "runAsUser",
+          "values" : [ "Administrator" ]
+        }, {
+          "templateKey" : "complyToISSpec",
+          "values" : [ "true" ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "active" : false
+}

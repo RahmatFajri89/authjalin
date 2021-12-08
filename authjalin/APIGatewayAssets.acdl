@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asset_composite name="APIGatewayAssets" displayName="Assets for API Gateway" runtimeVersion="10.11" targetNamespace="http://namespaces.softwareag.com/webMethods/APIGateway" xmlns="http://namespaces.softwareag.com/acdl/1.0" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:APIPORTAL="http://namespaces.softwareag.com/webMethods/APIPORTAL" xmlns:AgileApps="http://namespaces.softwareag.com/webMethods/AgileApps" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/BROKER" xmlns:implDetails="http://namespaces.softwareag.com/acdl/implDetails" xmlns:UniversalMessaging="http://namespaces.softwareag.com/webMethods/UniversalMessaging" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize">
+    <buildInfo name="BuildTimestamp" value="2021-12-06T22:36:13"/>
+    <asset name="API.edd97945-2e7a-43cf-969b-d903684ec2b0" displayName="authjalin[1.0]" isDeployable="true">
+        <implementation.generic type="API"/>
+        <dependsOn>APIGateway:Policy.dc07a94d-c95a-45f5-a5bf-0adfe7c53b20</dependsOn>
+    </asset>
+    <asset name="Policy.dc07a94d-c95a-45f5-a5bf-0adfe7c53b20" displayName="Policy For API authjalin[1.0]" isDeployable="true">
+        <implementation.generic type="Policy"/>
+        <dependsOn>APIGateway:PolicyAction.094dedc4-a710-4a21-b963-a9e4f044429d</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.166e0570-fef4-4c42-a36a-cd1840f4ecdf</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.1b998116-232d-4731-acfc-c9ed127b3d7d</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.3c415bb4-5ae1-48b2-9180-a4552ff6651b</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.4f8a249e-ab74-4ec8-9d7e-4bb5e8a238b3</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.6254d402-11f6-45f0-ab83-eb1970f51ba2</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.8e7aef7f-86cb-4d0d-ba04-d858035ed8a6</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.f26664ac-fa63-4ef3-9d8e-23b46b059cb8</dependsOn>
+    </asset>
+    <asset name="PolicyAction.6254d402-11f6-45f0-ab83-eb1970f51ba2" displayName="Policy Action [Request Transformation] -&gt; Policy For API authjalin[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.8e7aef7f-86cb-4d0d-ba04-d858035ed8a6" displayName="Policy Action [Conditional Routing] -&gt; Policy For API authjalin[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+        <dependsOn>APIGateway:Alias.41a1b253-9e52-4bfd-8ba4-5f1eb4843d15</dependsOn>
+    </asset>
+    <asset name="Alias.41a1b253-9e52-4bfd-8ba4-5f1eb4843d15" displayName="internal-is-url" isDeployable="true">
+        <implementation.generic type="Alias"/>
+        <property name="value for Simple alias internal-is-url" many="false" isSecure="false" displayName="value for Simple alias internal-is-url">
+            <value>http://localhost:5555</value>
+        </property>
+    </asset>
+    <asset name="PolicyAction.f26664ac-fa63-4ef3-9d8e-23b46b059cb8" displayName="Policy Action [Outbound Auth - Transport] -&gt; Policy For API authjalin[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+        <dependsOn>APIGateway:Alias.739a77bc-3e65-4cbf-bee3-02a10726b455</dependsOn>
+    </asset>
+    <asset name="Alias.739a77bc-3e65-4cbf-bee3-02a10726b455" displayName="privateopen-close-credential" isDeployable="true">
+        <implementation.generic type="Alias"/>
+        <dependsOn>APIGateway:PassmanData.HTTP_AUTH_OUTBOUND_CLIENT_PWDprivateopen-close-credential</dependsOn>
+        <property name="Username for HTTP Transport Security Alias privateopen-close-credential" many="false" isSecure="false" displayName="Username for HTTP Transport Security Alias privateopen-close-credential">
+            <value>privateopengateway</value>
+        </property>
+        <property name="Password for HTTP Transport Security Alias privateopen-close-credential" many="false" isSecure="true" displayName="Password for HTTP Transport Security Alias privateopen-close-credential">
+            <value>{AES}vDt83fIfdPbOEh8vBitePrw7fN3yH3T2zhIfLwYrXj5pitcLjd1NawNQdFYbmaFM</value>
+        </property>
+    </asset>
+    <asset name="PassmanData.HTTP_AUTH_OUTBOUND_CLIENT_PWDprivateopen-close-credential" displayName="HTTP_AUTH_OUTBOUND_CLIENT_PWDprivateopen-close-credential" isDeployable="true">
+        <implementation.generic type="PassmanData"/>
+    </asset>
+    <asset name="PolicyAction.094dedc4-a710-4a21-b963-a9e4f044429d" displayName="Policy Action [Log Invocation] -&gt; Policy For API authjalin[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.1b998116-232d-4731-acfc-c9ed127b3d7d" displayName="Policy Action [Identify &amp; Authorize] -&gt; Policy For API authjalin[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.166e0570-fef4-4c42-a36a-cd1840f4ecdf" displayName="Policy Action [Conditional Error Processing] -&gt; Policy For API authjalin[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.4f8a249e-ab74-4ec8-9d7e-4bb5e8a238b3" displayName="Policy Action [Conditional Error Processing] -&gt; Policy For API authjalin[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.3c415bb4-5ae1-48b2-9180-a4552ff6651b" displayName="Policy Action [Enable HTTP / HTTPS] -&gt; Policy For API authjalin[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+</asset_composite>

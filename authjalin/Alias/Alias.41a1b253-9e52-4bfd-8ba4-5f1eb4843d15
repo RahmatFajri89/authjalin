@@ -1,0 +1,7 @@
+{
+  "id" : "41a1b253-9e52-4bfd-8ba4-5f1eb4843d15",
+  "name" : "internal-is-url",
+  "type" : "simple",
+  "owner" : "Administrator",
+  "value" : "http://localhost:5555"
+}
